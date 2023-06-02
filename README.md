@@ -1,5 +1,5 @@
 # JoJoCRUD
-A simple CRUD created with JoJo inspiration to polish backend skills with nodejs and expressjs
+A simple CRUD created with JoJo inspiration to polish backend skills with nodejs and expressjs.
 This CRUD manages JoJo's Bizarre Adventures characters.
 As of now name, stand, age and musical references are stored.
 | Methods  | Description | Example | 
