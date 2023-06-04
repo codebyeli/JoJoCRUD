@@ -9,7 +9,9 @@ interface Characters{
     name: String,
     stand: String,
     musicalRef: String,
-    age: Number
+    age: Number,
+    nationality : String,
+    debut : String
 }
 
 app.use(express.json());
@@ -29,7 +31,7 @@ app.get('/chars/:id', (req: Request, res: Response) => {
 })
 
 app.post('/chars', (req: Request, res: Response) => {
-    const { name, stand, musicalRef, age } = req.body
+    const { name, stand, musicalRef, age, nationality, debut } = req.body
     const lookupchar = chars.find((Character) => Character.name.toLowerCase() === name.toLowerCase());
     if(lookupchar){
         return res.status(400).json(
@@ -43,7 +45,9 @@ app.post('/chars', (req: Request, res: Response) => {
         name,
         stand,
         musicalRef,
-        age
+        age,
+        nationality,
+        debut
     };
 
     chars_id += 1
@@ -53,7 +57,7 @@ app.post('/chars', (req: Request, res: Response) => {
 
 app.put('/chars/:id', (req:Request,res:Response) => {
     const { id } = req.params;
-    const { name, stand, musicalRef, age } = req.body;
+    const { name, stand, musicalRef, age, nationality, debut } = req.body;
     const index = chars.findIndex((Character) => Character.id === parseInt(id))
     if(index<0){
         return res.status(404).json(`The character with the ID ${id} was not found`);
@@ -69,7 +73,7 @@ app.put('/chars/:id', (req:Request,res:Response) => {
 })
 
 app.delete('/chars/:id',(req: Request, res: Response) => {
-    const { id, stand } = req.params;
+    const { id } = req.params;
     const index = chars.findIndex((Character) => Character.id === parseInt(id))
 
     if(index < 0) {
