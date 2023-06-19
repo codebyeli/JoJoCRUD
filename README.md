@@ -8,3 +8,5 @@ As of now name, stand, age and musical references are stored.
 | POST     | Posts a new character using the info on the body | ./heroes/ |
 | PULL     | Modifies an existing character by ID and replaces the existing info with the one on the body | ./heroes/1 |
 | DELETE   | Deletes a character by ID | ./heroes/7 |
+
+Next step is making a frontend for this CRUD with ReactJs or React Native
